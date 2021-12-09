@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   queryField = new FormControl();
   url = 'https://api.github.com/users';
   gits$: Observable<any>
-  id: number;
 
   constructor(private httpClient: HttpClient) {}
 

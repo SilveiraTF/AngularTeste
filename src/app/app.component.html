@@ -18,7 +18,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let git of gits$ | async">
+              <tr *ngIf="gits$ | async as git">
                 <td>{{git.id}}</td>
                 <td>{{git.login}}</td>
                 <td>{{git.name}}</td>
