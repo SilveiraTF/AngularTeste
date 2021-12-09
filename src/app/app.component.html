@@ -1,0 +1,45 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Informações GitHub</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="card list-git">
+      <h5 class="card-header">GitHub</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Login</th>
+                <th scope="col">Name</th>
+                <th scope="col">Url Profile</th>
+                <th scope="col">Url Repository</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let git of gits$ | async">
+                <td>{{git.id}}</td>
+                <td>{{git.login}}</td>
+                <td>{{git.name}}</td>
+                <td>{{git.url}}</td>
+                <td>{{git.repos_url}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div>
+        <h5 class="card-header">Buscar </h5>
+        <div class="card-body">
+            <div>
+              <div>
+                  <label for="model">Usuário</label>
+                  <input type="text" class="form-control" [formControl]="queryField" placeholder="Digite o seu login">
+              </div>
+              <button class="but btn-md btn-success" (click)="getGit()" >Pesquisar</button>
+            </div>
+        </div>
+      </div>
+  </div>
